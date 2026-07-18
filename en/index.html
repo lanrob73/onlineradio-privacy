@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — OnlineRadio</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #0a0f0a;
+    --fg: #d8ffe0;
+    --accent: #39ff88;
+    --muted: #8fae9a;
+    --panel: #101a12;
+    --border: #1f3a26;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6faf7;
+      --fg: #16241a;
+      --accent: #0a8a44;
+      --muted: #4c6656;
+      --panel: #ffffff;
+      --border: #d8e6dc;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  h1 {
+    font-size: 1.6rem;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+    margin-bottom: 4px;
+  }
+  .updated {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+  }
+  h2 {
+    color: var(--accent);
+    font-size: 1.05rem;
+    margin-top: 34px;
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+  }
+  h3 {
+    font-size: 0.98rem;
+    margin-top: 22px;
+    color: var(--fg);
+  }
+  p, li { font-size: 0.95rem; }
+  ul { padding-left: 22px; }
+  a { color: var(--accent); }
+  .box {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 18px 0;
+  }
+  code {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 0.85em;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .langswitch {
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langswitch">🌐 <a href="/onlineradio-privacy/">Magyar verzió</a></div>
+
+<h1>Privacy Policy — OnlineRadio (Z-GEN.SYS)</h1>
+<div class="updated">Last updated: July 18, 2026</div>
+
+<p>This document explains what data the OnlineRadio application — package
+name: <code>com.lantosr.onlineradio</code>, hereinafter referred to as "the
+Application" — processes, for what purposes, and with whom such data may be
+shared.</p>
+
+<div class="box">
+  <strong>Data Controller:</strong> Lantos Róbert, independent developer<br>
+  <strong>Contact:</strong> <a href="mailto:lantosrobi@gmail.com">lantosrobi@gmail.com</a>
+</div>
+
+<h2>Summary</h2>
+<p>The Application does not require its own registration or login, does not
+operate its own server-side user account system, and your settings, saved
+stations, favorites and other local data are generally stored only on your
+own device.</p>
+
+<p>The sections below explain, feature by feature, when, for what purpose,
+and through which external services data may leave your device.</p>
+
+<h2>What Data the Application Does NOT Collect</h2>
+<ul>
+  <li>The Application does not use the microphone. It does not record audio
+  from the microphone under any circumstances and does not request
+  microphone permission. The <code>RECORD_AUDIO</code> permission is not
+  included in the Application's Manifest file. The "save clip" feature does
+  not record environmental sound; it creates a saved audio file from the
+  already played and decoded radio stream.</li>
+  <li>The Application does not request its own account registration,
+  password or email address.</li>
+  <li>The Application does not read your SMS messages, call log or
+  contacts.</li>
+  <li>The Application does not collect or transmit browsing history.</li>
+  <li>The Application does not sell, rent or otherwise transfer your
+  personal data to third parties.</li>
+</ul>
+
+<h2>What Data the Application Processes and Why</h2>
+
+<h3>1. Radio Station Search</h3>
+<p>When you search for radio stations on the DISCOVERY search screen, the
+search term and the selected country may be sent to one of the mirror
+servers of the public, community-based
+<a href="https://www.radio-browser.info" target="_blank" rel="noopener">radio-browser.info</a>
+database in order to display the search results.</p>
+<p>This service is not operated by the developer of the Application. The
+privacy terms of radio-browser.info apply to that service.</p>
+
+<h3>2. Radio Stream Playback</h3>
+<p>When you start playing a radio station, your phone connects directly to
+the server of the selected radio station, in the same way as with any other
+internet radio player.</p>
+<p>For technical reasons, this connection may disclose your IP address to
+the operator of the selected radio station. This is necessary for stream
+playback and does not take place through a server operated by the developer
+of the Application.</p>
+
+<h3>3. Saved Stations, Favorites, Categories and Settings</h3>
+<p>Saved radio stations, favorites, categories, theme and language settings,
+alarms, sleep timer, daily listening streak and trial status are stored
+locally on your phone in storage associated with the Application.</p>
+<p>This data is not uploaded to any server operated by the developer. When
+you delete the Application's data or uninstall the Application, this local
+data is deleted.</p>
+
+<h3>4. Weather Display</h3>
+<p>For the weather row shown on the "Now Playing" card, the Application may
+automatically query your approximate location based on your IP address
+through the <a href="https://ipwho.is" target="_blank" rel="noopener">ipwho.is</a>
+service, without requesting GPS or precise location permission. Based on
+this city-level or regional-level approximate location, the Application may
+then call the public <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>
+weather API.</p>
+<p>The Application does not request precise location access and does not
+use GPS-based location tracking for this feature.</p>
+<p>During these requests, the ipwho.is and Open-Meteo services may receive
+your device's IP address. These external services are governed by their own
+privacy policies.</p>
+
+<h3>5. Calendar — Optional, as Part of the Morning Briefing</h3>
+<p>If you enable the Morning Briefing feature, the Application may read the
+title and time of calendar events scheduled for the current day from your
+phone's calendar in order to display your daily tasks.</p>
+<p>This information is displayed only on the screen. The Application does
+not save it and does not transmit it to any external server.</p>
+<p>This feature is disabled by default. The Application requests the
+<code>READ_CALENDAR</code> permission only when you enable this feature.</p>
+
+<h3>6. Notification Access — Optional, as Part of the Morning Briefing</h3>
+<p>If you separately enable notification access in the system settings, the
+Application only counts how many new notifications have arrived from each
+application.</p>
+<p>The Application does not read, display, store or transmit the content of
+your notifications to any external server.</p>
+<p>This data is used solely for displaying the Morning Briefing and remains
+on your device.</p>
+
+<h3>7. Local Music Files — Optional, as Alarm Sound Source</h3>
+<p>If you choose music stored on your phone as the alarm sound source, the
+Application lists the audio files available on your device from the system
+media library. This may require the <code>READ_MEDIA_AUDIO</code>
+permission.</p>
+<p>This information is used only for selecting the alarm sound. It does not
+leave your device and is not transmitted to any external service.</p>
+
+<h3>8. Saved Clips and Recordings — Media Library</h3>
+<p>The Z-GEN SNAP and radio recorder features create audio files from
+already played and decoded radio audio. The Application may save these
+files to the phone's media library.</p>
+<p>The completed clips and recordings are available under CONFIG &gt; Media
+Library. These files are shared with another application or person only if
+you explicitly use the Share function.</p>
+
+<h3>9. Spotify / Deezer Account Connection — Optional</h3>
+<p>If you use the favorite button to save a song to your own Spotify or
+Deezer account, the Application opens the official login page of the
+relevant service. Login takes place through an OAuth 2.0 based process.</p>
+<p>The Application never sees and never stores your Spotify or Deezer
+password.</p>
+<p>The access token received after login is stored encrypted and only on
+your own device. The Application uses it only at your request, for saving
+the selected song to your account.</p>
+<p>For technical reasons — specifically for exchanging the access token —
+the Deezer login process may pass through a minimal intermediary server
+operated by the developer in a Cloudflare Workers environment. This
+intermediary does not log or store the contents of the token and performs
+only the required technical forwarding.</p>
+
+<h3>10. Advertising — Google AdMob</h3>
+<p>After the 30-day free trial period expires — unless you have purchased
+the ad-free period — the Application may display banner ads and occasional
+full-screen ads through the Google AdMob advertising system.</p>
+<p>Google may collect device identifiers and technical data for the purpose
+of serving and personalizing advertisements, in accordance with its own
+privacy policy:
+<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+
+<h3>11. Purchases — Google Play Billing</h3>
+<p>The purchase of the ad-free period is processed entirely through the
+Google Play payment system.</p>
+<p>The Application does not see and does not store bank card details or any
+other payment information. The Application only receives a purchase
+confirmation returned by Google, which is used to determine whether
+advertisements should be displayed.</p>
+
+<h2>Data Security</h2>
+<p>Data requiring protection — such as Spotify and Deezer access tokens —
+is stored using Android's built-in secure storage solutions. This data is
+stored in encrypted form, only on the device, and is intentionally excluded
+from Android's automatic cloud backup.</p>
+
+<h2>Children's Data</h2>
+<p>The Application is not specifically intended for children, and the
+developer does not knowingly collect data from users under the age of 13.</p>
+
+<h2>Information About Your Rights</h2>
+<p>Since most data is stored only on your own device, you have direct
+control over it. Several types of saved data can be deleted from within the
+Application's settings, and deleting the Application's data or uninstalling
+the Application will also remove local data.</p>
+<p>The Spotify and Deezer account connection can be disconnected at any time
+from within the Application, and it can also be revoked from the account
+settings of the relevant service.</p>
+<p>For any privacy-related request, you may contact the developer using the
+email address provided in the Contact section.</p>
+
+<h2>Changes to This Policy</h2>
+<p>This policy may be updated from time to time if the operation or
+functionality of the Application changes. The date of the latest update is
+always shown at the top of this document.</p>
+
+<h2>Contact</h2>
+<p>For questions or privacy-related requests, please contact:
+<a href="mailto:lantosrobi@gmail.com">lantosrobi@gmail.com</a></p>
+
+<footer>OnlineRadio — Z-GEN.SYS</footer>
+</div>
+</body>
+</html>
