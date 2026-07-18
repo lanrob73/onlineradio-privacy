@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adatvédelmi szabályzat — OnlineRadio</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #0a0f0a;
+    --fg: #d8ffe0;
+    --accent: #39ff88;
+    --muted: #8fae9a;
+    --panel: #101a12;
+    --border: #1f3a26;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6faf7;
+      --fg: #16241a;
+      --accent: #0a8a44;
+      --muted: #4c6656;
+      --panel: #ffffff;
+      --border: #d8e6dc;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  h1 {
+    font-size: 1.6rem;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+    margin-bottom: 4px;
+  }
+  .updated {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+  }
+  h2 {
+    color: var(--accent);
+    font-size: 1.05rem;
+    margin-top: 34px;
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+  }
+  h3 {
+    font-size: 0.98rem;
+    margin-top: 22px;
+    color: var(--fg);
+  }
+  p, li { font-size: 0.95rem; }
+  ul { padding-left: 22px; }
+  a { color: var(--accent); }
+  .box {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 18px 0;
+  }
+  code {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 0.85em;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Adatvédelmi szabályzat — OnlineRadio (Z-GEN.SYS)</h1>
+<div class="updated">Utolsó frissítés: 2026. 07. 18.</div>
+
+<p>Ez a dokumentum leírja, hogy az OnlineRadio (csomagnév:
+<code>com.lantosr.onlineradio</code>, a továbbiakban "az Alkalmazás") milyen
+adatokat kezel, milyen célból, és kikkel osztja meg azokat.</p>
+
+<div class="box">
+  <strong>Adatkezelő:</strong> Lantos Róbert, egyéni fejlesztő<br>
+  <strong>Kapcsolat:</strong> <a href="mailto:lantosrobi@gmail.com">lantosrobi@gmail.com</a>
+</div>
+
+<h2>Röviden</h2>
+<p>Az Alkalmazás <strong>nem igényel regisztrációt vagy bejelentkezést</strong>,
+nincs saját szerveroldali felhasználói fiókrendszere, és a
+beállításaid/mentett adataid alapesetben <strong>kizárólag a saját
+eszközödön</strong> tárolódnak. Az alábbi részletezés funkciónként bontja ki,
+mikor és milyen adat hagyja el mégis az eszközt.</p>
+
+<h2>Milyen adatot NEM gyűjt az Alkalmazás</h2>
+<ul>
+  <li>Nincs mikrofonhasználat — az Alkalmazás semmilyen körülmények között
+  nem rögzít hangot a mikrofonból, ehhez engedélyt sem kér
+  (<code>RECORD_AUDIO</code> nincs a Manifestben). A "klip mentése" funkció a
+  már lejátszott rádióstream dekódolt hangját másolja ki, nem a környezeti
+  hangot.</li>
+  <li>Nincs saját fiókregisztráció, jelszó vagy e-mail-cím bekérése.</li>
+  <li>Nem olvassa az SMS-eidet, hívásnaplódat, kontaktjaidat.</li>
+  <li>Nem gyűjt és nem továbbít böngészési előzményt.</li>
+  <li>Nem árulja és nem adja bérbe az adataidat harmadik félnek.</li>
+</ul>
+
+<h2>Milyen adatokat kezel, és miért</h2>
+
+<h3>1. Rádióállomás-keresés</h3>
+<p>Amikor a Discovery (kereső) lapon rádiót keresel, a keresési kifejezés és
+a kiválasztott ország a
+<a href="https://www.radio-browser.info" target="_blank" rel="noopener">radio-browser.info</a>
+nyilvános, közösségi adatbázisának egyik tükörszerverére megy ki, hogy megkapd
+a találatokat. Ez a szolgáltatás nem az Alkalmazás fejlesztőjének
+üzemeltetésében áll, saját adatvédelmi feltételei vonatkoznak rá.</p>
+
+<h3>2. Rádióstream lejátszása</h3>
+<p>Amikor egy adót elindítasz, a telefonod közvetlenül kapcsolódik az adott
+rádióállomás saját szerveréhez (ahogy bármely internetrádió-lejátszó
+esetén). Ez a kapcsolat a te IP-címedet felfedi az adott állomás üzemeltetője
+felé — ez technikailag elkerülhetetlen a stream lejátszásához, és nem az
+Alkalmazás fejlesztőjének kezelésében áll.</p>
+
+<h3>3. Mentett állomások, kedvencek, kategóriák, beállítások</h3>
+<p>Az elmentett rádiólista, kedvencek, kategóriák, téma/nyelvi beállítások,
+ébresztők, elalvásidőzítő, napi hallgatási széria és próbaidő-állapot a
+telefon saját, alkalmazáshoz kötött tárhelyén (Android DataStore) tárolódik.
+Ez az adat <strong>nem kerül fel semmilyen, a fejlesztő által üzemeltetett
+szerverre</strong> — törléskor / az alkalmazás adatainak törlésekor /
+eltávolításakor véglegesen megsemmisül.</p>
+
+<h3>4. Időjárás-kijelzés</h3>
+<p>A "most szól" kártya időjárás-sorához az Alkalmazás automatikusan
+(bekapcsolás vagy engedélykérés nélkül) lekérdezi a hozzávetőleges
+helyzetedet a telefon <strong>IP-címe alapján</strong> az
+<a href="https://ipwho.is" target="_blank" rel="noopener">ipwho.is</a>
+szolgáltatáson keresztül, majd ez alapján az
+<a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>
+nyilvános időjárás-API-ját hívja meg. Ehhez <strong>nem kér GPS/pontos
+helyadat-engedélyt</strong> — az így kapott helymeghatározás csak
+városi/regionális pontosságú. Mindkét külső szolgáltatás megkapja az eszköz
+IP-címét a lekérdezés során, ez alapján saját adatvédelmi szabályzatuk
+vonatkozik a kezelésre.</p>
+
+<h3>5. Naptár (opcionális — "reggeli összefoglaló")</h3>
+<p>Ha bekapcsolod a "Reggeli összefoglaló" funkciót, az Alkalmazás
+felolvassa a telefonod naptárában aznapra beállított események címét és
+időpontját, hogy megjeleníthesse a napi teendőidet. Ez az adat
+<strong>kizárólag a képernyőn</strong> jelenik meg, nem kerül elmentésre és
+nem hagyja el az eszközt. A funkció alapból ki van kapcsolva, és a
+<code>READ_CALENDAR</code> engedélyt csak a bekapcsolás pillanatában kéri el
+az Alkalmazás.</p>
+
+<h3>6. Értesítés-hozzáférés (opcionális — "reggeli összefoglaló")</h3>
+<p>Ugyanennél a funkciónál, ha külön engedélyezed a rendszer beállításaiban
+az értesítés-hozzáférést, az Alkalmazás <strong>kizárólag megszámolja</strong>,
+hogy melyik alkalmazásból hány új értesítés érkezett — az értesítések
+<strong>tartalmát nem olvassa ki és nem tárolja</strong>, és ez az adat sem
+hagyja el az eszközt.</p>
+
+<h3>7. Helyi zenefájlok (opcionális — ébresztőhang forrásaként)</h3>
+<p>Ha az ébresztő hangforrásaként a telefonodon tárolt zenét választod, az
+Alkalmazás a rendszeres médiatárból (<code>READ_MEDIA_AUDIO</code> engedély)
+listázza a készüléken elérhető zenéket. Ez az adat kizárólag a
+kiválasztáshoz szükséges, nem hagyja el az eszközt.</p>
+
+<h3>8. Mentett klipek (Médiatár)</h3>
+<p>A "klip mentése" funkció a már lejátszott, dekódolt rádióhangból készít
+rövid hangfájlt (csengőhangnak vagy más célra), amit a telefon saját,
+alkalmazás-független médiatárába (MediaStore) ment el. Ez a fájl csak akkor
+kerül megosztásra más alkalmazással, ha te kifejezetten a Megosztás gombot
+megnyomod.</p>
+
+<h3>9. Spotify / Deezer fiókkapcsolás (opcionális)</h3>
+<p>Ha a kedvenc-gombbal egy számot a saját Spotify vagy Deezer fiókodba
+mented, az Alkalmazás a szolgáltató hivatalos bejelentkezési oldalát nyitja
+meg a böngésződben (OAuth 2.0, PKCE-eljárással) — az Alkalmazás soha nem
+látja és nem tárolja a jelszavadat. A bejelentkezés után kapott hozzáférési
+kulcs <strong>titkosítva, kizárólag a saját eszközödön</strong> tárolódik, és
+csak a te kérésedre használja az Alkalmazás a szám mentésére. A Deezer
+bejelentkezés technikai okokból (a hozzáférési kulcs cseréje) a fejlesztő
+saját, minimális közvetítő szerverén (Cloudflare Workers) megy keresztül,
+amely nem naplózza és nem tárolja a token tartalmát, csak továbbítja azt.</p>
+
+<h3>10. Hirdetések (Google AdMob)</h3>
+<p>A 30 napos ingyenes próbaidő lejárta után (hacsak nem vásároltad meg az 1
+éves reklámmentességet) az Alkalmazás a Google AdMob hirdetési rendszerén
+keresztül banner és időnkénti teljes képernyős hirdetéseket jelenít meg. A
+Google ennek keretében eszközazonosítót és technikai adatokat gyűjthet a
+hirdetések kiszolgálásához és személyre szabásához, saját adatvédelmi
+szabályzata szerint:
+<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+
+<h3>11. Vásárlás (Google Play Billing)</h3>
+<p>Az 1 éves reklámmentesség megvásárlása teljes egészében a Google Play
+fizetési rendszerén keresztül történik. Az Alkalmazás <strong>soha nem lát
+és nem tárol bankkártya- vagy fizetési adatot</strong> — kizárólag egy, a
+Google által visszaadott vásárlás-visszaigazolást kap, ami alapján eldönti,
+fusson-e hirdetés.</p>
+
+<h2>Adatbiztonság</h2>
+<p>A titkosítást igénylő adatok (pl. Spotify/Deezer hozzáférési kulcsok) az
+Android beépített, hardveresen támogatott titkosított tárolóján
+(<code>EncryptedSharedPreferences</code>, AES-256) keresztül kerülnek
+mentésre, és szándékosan ki vannak zárva az Android automatikus
+felhő-mentéséből is.</p>
+
+<h2>Gyermekek adatai</h2>
+<p>Az Alkalmazás nem kifejezetten gyermekeknek szól, és tudatosan nem gyűjt
+adatot 13 év alatti felhasználóktól.</p>
+
+<h2>Az Ön jogai</h2>
+<p>Mivel a legtöbb adat kizárólag a saját eszközödön tárolódik, ezek felett
+teljes kontrollod van: az Alkalmazás beállításai közül bármely mentett adat
+törölhető, illetve az Alkalmazás adatainak törlésével vagy eltávolításával
+minden helyi adat véglegesen megsemmisül. A Spotify/Deezer fiókkapcsolat
+bármikor lecsatlakoztatható az Alkalmazásból, illetve visszavonható az adott
+szolgáltatás saját fiókbeállításaiból is.</p>
+
+<h2>A szabályzat módosítása</h2>
+<p>Ezt a szabályzatot időről időre frissíthetjük, ha az Alkalmazás
+funkcionalitása változik. A frissítés dátuma mindig a dokumentum tetején
+látható.</p>
+
+<h2>Kapcsolat</h2>
+<p>Kérdés vagy adatkezeléssel kapcsolatos kérés esetén:
+<a href="mailto:lantosrobi@gmail.com">lantosrobi@gmail.com</a></p>
+
+<footer>OnlineRadio — Z-GEN.SYS</footer>
+</div>
+</body>
+</html>
