@@ -93,9 +93,9 @@
 <h1>Adatvédelmi szabályzat — OnlineRadio (Z-GEN.SYS)</h1>
 <div class="updated">Utolsó frissítés: 2026. 07. 18.</div>
 
-<p>Ez a dokumentum leírja, hogy az OnlineRadio (csomagnév:
-<code>com.lantosr.onlineradio</code>, a továbbiakban "az Alkalmazás") milyen
-adatokat kezel, milyen célból, és kikkel osztja meg azokat.</p>
+<p>Ez a dokumentum bemutatja, hogy az OnlineRadio alkalmazás — csomagnév:
+<code>com.lantosr.onlineradio</code>, a továbbiakban: „az Alkalmazás" —
+milyen adatokat kezel, milyen célból, és kikkel oszthatja meg azokat.</p>
 
 <div class="box">
   <strong>Adatkezelő:</strong> Lantos Róbert, egyéni fejlesztő<br>
@@ -103,142 +103,167 @@ adatokat kezel, milyen célból, és kikkel osztja meg azokat.</p>
 </div>
 
 <h2>Röviden</h2>
-<p>Az Alkalmazás <strong>nem igényel regisztrációt vagy bejelentkezést</strong>,
-nincs saját szerveroldali felhasználói fiókrendszere, és a
-beállításaid/mentett adataid alapesetben <strong>kizárólag a saját
-eszközödön</strong> tárolódnak. Az alábbi részletezés funkciónként bontja ki,
-mikor és milyen adat hagyja el mégis az eszközt.</p>
+<p>Az Alkalmazás nem igényel saját regisztrációt vagy bejelentkezést, nincs
+saját szerveroldali felhasználói fiókrendszere, és a beállításaid, mentett
+állomásaid, kedvenceid és egyéb helyi adataid alapesetben kizárólag a saját
+eszközödön tárolódnak.</p>
 
-<h2>Milyen adatot NEM gyűjt az Alkalmazás</h2>
+<p>Az alábbi részletezés funkciónként mutatja be, hogy mikor, milyen célból
+és milyen külső szolgáltatások felé hagyhatja el adat az eszközödet.</p>
+
+<h2>Milyen adatot NEM gyűjt az Alkalmazás?</h2>
 <ul>
-  <li>Nincs mikrofonhasználat — az Alkalmazás semmilyen körülmények között
-  nem rögzít hangot a mikrofonból, ehhez engedélyt sem kér
-  (<code>RECORD_AUDIO</code> nincs a Manifestben). A "klip mentése" funkció a
-  már lejátszott rádióstream dekódolt hangját másolja ki, nem a környezeti
-  hangot.</li>
-  <li>Nincs saját fiókregisztráció, jelszó vagy e-mail-cím bekérése.</li>
-  <li>Nem olvassa az SMS-eidet, hívásnaplódat, kontaktjaidat.</li>
-  <li>Nem gyűjt és nem továbbít böngészési előzményt.</li>
-  <li>Nem árulja és nem adja bérbe az adataidat harmadik félnek.</li>
+  <li>Az Alkalmazás nem használ mikrofont. Semmilyen körülmények között nem
+  rögzít hangot a mikrofonból, és ehhez engedélyt sem kér. A
+  <code>RECORD_AUDIO</code> engedély nem szerepel az alkalmazás Manifest
+  fájljában. A „klip mentése" funkció nem a környezeti hangot rögzíti, hanem
+  a már lejátszott rádióstream dekódolt hangjából készít mentést.</li>
+  <li>Az Alkalmazás nem kér saját fiókregisztrációt, jelszót vagy
+  e-mail-címet.</li>
+  <li>Az Alkalmazás nem olvassa az SMS-eidet, a hívásnaplódat vagy a
+  kontaktjaidat.</li>
+  <li>Az Alkalmazás nem gyűjt és nem továbbít böngészési előzményeket.</li>
+  <li>Az Alkalmazás nem értékesíti, nem adja bérbe és nem adja tovább a
+  személyes adataidat harmadik félnek.</li>
 </ul>
 
-<h2>Milyen adatokat kezel, és miért</h2>
+<h2>Milyen adatokat kezel az Alkalmazás, és miért?</h2>
 
 <h3>1. Rádióállomás-keresés</h3>
-<p>Amikor a Discovery (kereső) lapon rádiót keresel, a keresési kifejezés és
-a kiválasztott ország a
+<p>Amikor a DISCOVERY keresőfelületen rádióállomást keresel, a keresési
+kifejezés és a kiválasztott ország adatai a
 <a href="https://www.radio-browser.info" target="_blank" rel="noopener">radio-browser.info</a>
-nyilvános, közösségi adatbázisának egyik tükörszerverére megy ki, hogy megkapd
-a találatokat. Ez a szolgáltatás nem az Alkalmazás fejlesztőjének
-üzemeltetésében áll, saját adatvédelmi feltételei vonatkoznak rá.</p>
+nyilvános, közösségi adatbázisának egyik tükörszerverére kerülhetnek
+továbbításra, hogy az Alkalmazás meg tudja jeleníteni a találatokat.</p>
+<p>Ezt a szolgáltatást nem az Alkalmazás fejlesztője üzemelteti, ezért a
+radio-browser.info saját adatvédelmi feltételei vonatkoznak rá.</p>
 
 <h3>2. Rádióstream lejátszása</h3>
-<p>Amikor egy adót elindítasz, a telefonod közvetlenül kapcsolódik az adott
-rádióállomás saját szerveréhez (ahogy bármely internetrádió-lejátszó
-esetén). Ez a kapcsolat a te IP-címedet felfedi az adott állomás üzemeltetője
-felé — ez technikailag elkerülhetetlen a stream lejátszásához, és nem az
-Alkalmazás fejlesztőjének kezelésében áll.</p>
+<p>Amikor elindítasz egy rádióállomást, a telefonod közvetlenül kapcsolódik
+az adott rádióállomás saját szerveréhez, ugyanúgy, mint bármely más
+internetrádió-lejátszó esetében.</p>
+<p>Ez a kapcsolat technikai okból felfedheti az IP-címedet az adott
+rádióállomás üzemeltetője felé. Ez a stream lejátszásához szükséges, és nem
+az Alkalmazás fejlesztőjének szerverén keresztül történik.</p>
 
-<h3>3. Mentett állomások, kedvencek, kategóriák, beállítások</h3>
-<p>Az elmentett rádiólista, kedvencek, kategóriák, téma/nyelvi beállítások,
-ébresztők, elalvásidőzítő, napi hallgatási széria és próbaidő-állapot a
-telefon saját, alkalmazáshoz kötött tárhelyén (Android DataStore) tárolódik.
-Ez az adat <strong>nem kerül fel semmilyen, a fejlesztő által üzemeltetett
-szerverre</strong> — törléskor / az alkalmazás adatainak törlésekor /
-eltávolításakor véglegesen megsemmisül.</p>
+<h3>3. Mentett állomások, kedvencek, kategóriák és beállítások</h3>
+<p>Az elmentett rádióállomások, kedvencek, kategóriák, téma- és nyelvi
+beállítások, ébresztők, elalvásidőzítő, napi hallgatási széria és
+próbaidő-állapot a telefon saját, az Alkalmazáshoz kötött tárhelyén
+tárolódik.</p>
+<p>Ezek az adatok nem kerülnek fel a fejlesztő által üzemeltetett szerverre.
+Az Alkalmazás adatainak törlésekor vagy az Alkalmazás eltávolításakor ezek a
+helyi adatok törlődnek.</p>
 
 <h3>4. Időjárás-kijelzés</h3>
-<p>A "most szól" kártya időjárás-sorához az Alkalmazás automatikusan
-(bekapcsolás vagy engedélykérés nélkül) lekérdezi a hozzávetőleges
-helyzetedet a telefon <strong>IP-címe alapján</strong> az
+<p>A „most szól" kártya időjárás-sorához az Alkalmazás automatikusan, külön
+GPS- vagy pontos helyadat-engedély kérése nélkül, az IP-cím alapján
+lekérdezheti a hozzávetőleges helyzetedet az
 <a href="https://ipwho.is" target="_blank" rel="noopener">ipwho.is</a>
-szolgáltatáson keresztül, majd ez alapján az
+szolgáltatáson keresztül. Ezt követően az így kapott városi vagy regionális
+pontosságú helyadat alapján meghívhatja az
 <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>
-nyilvános időjárás-API-ját hívja meg. Ehhez <strong>nem kér GPS/pontos
-helyadat-engedélyt</strong> — az így kapott helymeghatározás csak
-városi/regionális pontosságú. Mindkét külső szolgáltatás megkapja az eszköz
-IP-címét a lekérdezés során, ez alapján saját adatvédelmi szabályzatuk
-vonatkozik a kezelésre.</p>
+nyilvános időjárás-API-ját.</p>
+<p>Az Alkalmazás ehhez nem kér pontos helyadat-hozzáférést, és nem használ
+GPS-alapú helymeghatározást.</p>
+<p>A lekérdezések során az ipwho.is és az Open-Meteo szolgáltatás megkaphatja
+az eszköz IP-címét. Ezekre a külső szolgáltatásokra a saját adatvédelmi
+szabályzataik vonatkoznak.</p>
 
-<h3>5. Naptár (opcionális — "reggeli összefoglaló")</h3>
-<p>Ha bekapcsolod a "Reggeli összefoglaló" funkciót, az Alkalmazás
-felolvassa a telefonod naptárában aznapra beállított események címét és
-időpontját, hogy megjeleníthesse a napi teendőidet. Ez az adat
-<strong>kizárólag a képernyőn</strong> jelenik meg, nem kerül elmentésre és
-nem hagyja el az eszközt. A funkció alapból ki van kapcsolva, és a
-<code>READ_CALENDAR</code> engedélyt csak a bekapcsolás pillanatában kéri el
-az Alkalmazás.</p>
+<h3>5. Naptár — opcionális, a Reggeli összefoglaló részeként</h3>
+<p>Ha bekapcsolod a Reggeli összefoglaló funkciót, az Alkalmazás
+kiolvashatja a telefonod naptárából az adott napra beállított események
+címét és időpontját, hogy megjeleníthesse a napi teendőidet.</p>
+<p>Ez az adat kizárólag a képernyőn jelenik meg. Az Alkalmazás nem menti el,
+és nem továbbítja külső szerverre.</p>
+<p>A funkció alapértelmezés szerint ki van kapcsolva. A
+<code>READ_CALENDAR</code> engedélyt az Alkalmazás csak akkor kéri, amikor a
+funkciót bekapcsolod.</p>
 
-<h3>6. Értesítés-hozzáférés (opcionális — "reggeli összefoglaló")</h3>
-<p>Ugyanennél a funkciónál, ha külön engedélyezed a rendszer beállításaiban
-az értesítés-hozzáférést, az Alkalmazás <strong>kizárólag megszámolja</strong>,
-hogy melyik alkalmazásból hány új értesítés érkezett — az értesítések
-<strong>tartalmát nem olvassa ki és nem tárolja</strong>, és ez az adat sem
-hagyja el az eszközt.</p>
+<h3>6. Értesítés-hozzáférés — opcionális, a Reggeli összefoglaló részeként</h3>
+<p>Ha a rendszerbeállításokban külön engedélyezed az értesítés-hozzáférést,
+az Alkalmazás kizárólag azt számolja össze, hogy melyik alkalmazásból hány
+új értesítés érkezett.</p>
+<p>Az Alkalmazás az értesítések tartalmát nem olvassa ki, nem jeleníti meg,
+nem menti el, és nem továbbítja külső szerverre.</p>
+<p>Ez az adat kizárólag a Reggeli összefoglaló megjelenítéséhez szükséges,
+és az eszközön marad.</p>
 
-<h3>7. Helyi zenefájlok (opcionális — ébresztőhang forrásaként)</h3>
+<h3>7. Helyi zenefájlok — opcionális, ébresztőhang forrásaként</h3>
 <p>Ha az ébresztő hangforrásaként a telefonodon tárolt zenét választod, az
-Alkalmazás a rendszeres médiatárból (<code>READ_MEDIA_AUDIO</code> engedély)
-listázza a készüléken elérhető zenéket. Ez az adat kizárólag a
-kiválasztáshoz szükséges, nem hagyja el az eszközt.</p>
+Alkalmazás a rendszer médiatárából listázza a készüléken elérhető
+hangfájlokat. Ehhez a <code>READ_MEDIA_AUDIO</code> engedélyre lehet
+szükség.</p>
+<p>Ez az adat kizárólag a kiválasztáshoz szükséges, nem hagyja el az
+eszközt, és nem kerül továbbításra külső szolgáltatás felé.</p>
 
-<h3>8. Mentett klipek (Médiatár)</h3>
-<p>A "klip mentése" funkció a már lejátszott, dekódolt rádióhangból készít
-rövid hangfájlt (csengőhangnak vagy más célra), amit a telefon saját,
-alkalmazás-független médiatárába (MediaStore) ment el. Ez a fájl csak akkor
-kerül megosztásra más alkalmazással, ha te kifejezetten a Megosztás gombot
-megnyomod.</p>
+<h3>8. Mentett klipek és felvételek — Médiatár</h3>
+<p>A Z-GEN SNAP és a rádiófelvevő funkció a már lejátszott, dekódolt
+rádióhangból készít hangfájlt. Ezeket az Alkalmazás a telefon médiatárába
+mentheti.</p>
+<p>Az elkészült klipek és felvételek a CONFIG &gt; Médiatár menüpontban
+érhetők el. Ezek a fájlok csak akkor kerülnek megosztásra más alkalmazással
+vagy személlyel, ha te kifejezetten a Megosztás funkciót használod.</p>
 
-<h3>9. Spotify / Deezer fiókkapcsolás (opcionális)</h3>
-<p>Ha a kedvenc-gombbal egy számot a saját Spotify vagy Deezer fiókodba
-mented, az Alkalmazás a szolgáltató hivatalos bejelentkezési oldalát nyitja
-meg a böngésződben (OAuth 2.0, PKCE-eljárással) — az Alkalmazás soha nem
-látja és nem tárolja a jelszavadat. A bejelentkezés után kapott hozzáférési
-kulcs <strong>titkosítva, kizárólag a saját eszközödön</strong> tárolódik, és
-csak a te kérésedre használja az Alkalmazás a szám mentésére. A Deezer
-bejelentkezés technikai okokból (a hozzáférési kulcs cseréje) a fejlesztő
-saját, minimális közvetítő szerverén (Cloudflare Workers) megy keresztül,
-amely nem naplózza és nem tárolja a token tartalmát, csak továbbítja azt.</p>
+<h3>9. Spotify / Deezer fiókkapcsolás — opcionális</h3>
+<p>Ha a kedvenc-gombbal egy számot a saját Spotify- vagy Deezer-fiókodba
+szeretnél menteni, az Alkalmazás a szolgáltató hivatalos bejelentkezési
+oldalát nyitja meg. A bejelentkezés OAuth 2.0 alapú folyamaton keresztül
+történik.</p>
+<p>Az Alkalmazás nem látja és nem tárolja a Spotify- vagy
+Deezer-jelszavadat.</p>
+<p>A bejelentkezés után kapott hozzáférési kulcs titkosítva, kizárólag a
+saját eszközödön tárolódik, és az Alkalmazás csak a te kérésedre használja
+azt a kiválasztott szám mentéséhez.</p>
+<p>A Deezer-bejelentkezés technikai okokból — a hozzáférési kulcs cseréje
+miatt — a fejlesztő saját, minimális közvetítő szerverén, Cloudflare Workers
+környezetben haladhat át. Ez a közvetítő nem naplózza és nem tárolja a token
+tartalmát, kizárólag a szükséges technikai továbbítást végzi.</p>
 
-<h3>10. Hirdetések (Google AdMob)</h3>
-<p>A 30 napos ingyenes próbaidő lejárta után (hacsak nem vásároltad meg az 1
-éves reklámmentességet) az Alkalmazás a Google AdMob hirdetési rendszerén
-keresztül banner és időnkénti teljes képernyős hirdetéseket jelenít meg. A
-Google ennek keretében eszközazonosítót és technikai adatokat gyűjthet a
-hirdetések kiszolgálásához és személyre szabásához, saját adatvédelmi
+<h3>10. Hirdetések — Google AdMob</h3>
+<p>A 30 napos ingyenes próbaidő lejárta után — hacsak nem vásároltad meg a
+reklámmentes időszakot — az Alkalmazás a Google AdMob hirdetési rendszerén
+keresztül bannerhirdetéseket és időnként teljes képernyős hirdetéseket
+jeleníthet meg.</p>
+<p>A Google a hirdetések kiszolgálása és személyre szabása érdekében
+eszközazonosítót és technikai adatokat gyűjthet, a saját adatvédelmi
 szabályzata szerint:
 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
 
-<h3>11. Vásárlás (Google Play Billing)</h3>
-<p>Az 1 éves reklámmentesség megvásárlása teljes egészében a Google Play
-fizetési rendszerén keresztül történik. Az Alkalmazás <strong>soha nem lát
-és nem tárol bankkártya- vagy fizetési adatot</strong> — kizárólag egy, a
-Google által visszaadott vásárlás-visszaigazolást kap, ami alapján eldönti,
-fusson-e hirdetés.</p>
+<h3>11. Vásárlás — Google Play Billing</h3>
+<p>A reklámmentes időszak megvásárlása teljes egészében a Google Play
+fizetési rendszerén keresztül történik.</p>
+<p>Az Alkalmazás nem lát és nem tárol bankkártya-adatokat vagy egyéb
+fizetési adatokat. Az Alkalmazás kizárólag egy, a Google által visszaadott
+vásárlási visszaigazolást kap, amely alapján eldönti, hogy meg kell-e
+jelenítenie hirdetéseket.</p>
 
 <h2>Adatbiztonság</h2>
-<p>A titkosítást igénylő adatok (pl. Spotify/Deezer hozzáférési kulcsok) az
-Android beépített, hardveresen támogatott titkosított tárolóján
-(<code>EncryptedSharedPreferences</code>, AES-256) keresztül kerülnek
-mentésre, és szándékosan ki vannak zárva az Android automatikus
-felhő-mentéséből is.</p>
+<p>A titkosítást igénylő adatok — például a Spotify- és Deezer-hozzáférési
+kulcsok — az Android beépített, biztonságos tárolási megoldásain keresztül
+kerülnek mentésre. Ezek az adatok titkosított formában, kizárólag az
+eszközön tárolódnak, és szándékosan ki vannak zárva az Android automatikus
+felhőmentéséből.</p>
 
 <h2>Gyermekek adatai</h2>
-<p>Az Alkalmazás nem kifejezetten gyermekeknek szól, és tudatosan nem gyűjt
-adatot 13 év alatti felhasználóktól.</p>
+<p>Az Alkalmazás nem kifejezetten gyermekeknek készült, és a fejlesztő
+tudatosan nem gyűjt adatot 13 év alatti felhasználóktól.</p>
 
-<h2>Az Ön jogai</h2>
+<h2>Az Ön jogaival kapcsolatos információk</h2>
 <p>Mivel a legtöbb adat kizárólag a saját eszközödön tárolódik, ezek felett
-teljes kontrollod van: az Alkalmazás beállításai közül bármely mentett adat
-törölhető, illetve az Alkalmazás adatainak törlésével vagy eltávolításával
-minden helyi adat véglegesen megsemmisül. A Spotify/Deezer fiókkapcsolat
-bármikor lecsatlakoztatható az Alkalmazásból, illetve visszavonható az adott
-szolgáltatás saját fiókbeállításaiból is.</p>
+közvetlen kontrollal rendelkezel. Az Alkalmazás beállításai között több
+mentett adat törölhető, illetve az Alkalmazás adatainak törlésével vagy az
+Alkalmazás eltávolításával a helyi adatok is törlődnek.</p>
+<p>A Spotify- és Deezer-fiókkapcsolat bármikor megszüntethető az
+Alkalmazásból, illetve visszavonható az adott szolgáltatás saját
+fiókbeállításaiban is.</p>
+<p>Adatkezeléssel kapcsolatos kérés esetén a Kapcsolat pontban megadott
+e-mail-címen veheted fel a kapcsolatot a fejlesztővel.</p>
 
 <h2>A szabályzat módosítása</h2>
-<p>Ezt a szabályzatot időről időre frissíthetjük, ha az Alkalmazás
-funkcionalitása változik. A frissítés dátuma mindig a dokumentum tetején
-látható.</p>
+<p>Ezt a szabályzatot időről időre frissíthetjük, ha az Alkalmazás működése
+vagy funkcionalitása változik. A frissítés dátuma mindig a dokumentum
+tetején látható.</p>
 
 <h2>Kapcsolat</h2>
 <p>Kérdés vagy adatkezeléssel kapcsolatos kérés esetén:
